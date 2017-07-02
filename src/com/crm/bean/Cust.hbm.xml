@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC     
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"    
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+                           <!-- 最后一行改成和cfg.xml一样的 -->
+<hibernate-mapping>
+	<class name="com.crm.bean.Cust" table="customer">  <!-- cust改成了customer -->
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="increment"></generator>
+		</id>
+		<property name="custno" type="string" column="custno" length="20"/>
+		<property name="custname" type="string" column="custname" length="80"/>
+		<property name="sex" type="string" column="sex" length="15"/>
+	</class>
+</hibernate-mapping>

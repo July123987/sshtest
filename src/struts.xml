@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+   
+<struts>
+<package name="customer" extends="struts-default">
+<!-- 保存 -->
+<action name="saveCust" class="custSaveAction">
+    <result name="success" type="redirect">listCustomer.action</result>
+			<result name="input">/jsp/customerAdd.jsp</result>  <!-- custAdd改成custSave 改成customerAdd-->
+</action>
+<!-- 查询 -->
+<action name="listCustomer" class="listCustomerAcion">
+	<result>/jsp/customerInfo.jsp</result>
+</action>
+<!-- 删除 -->
+<action name="delectCustomer" class="removeCustomerAcion">
+	<result>/jsp/customerInfo.jsp</result>
+</action>
+<!-- 条件查询 -->
+<action name="findCdtCustList" class="findCdtAction">
+	<result>/jsp/customerInfo.jsp</result>
+</action>
+<!-- 修改预览 -->
+<action name="updatePreviewCust" class="updatePreviewAction">
+	<result name="success">/jsp/custUpdate.jsp</result>
+</action>
+<!-- 修改 -->
+<action name="updateCust" class="updateCustAction">
+    <result name="success" type="redirect">listCustomer.action</result>
+	<result name="input">/jsp/custUpdate.jsp</result>
+</action>
+<!-- typeAcion下拉列表 -->
+<action name="typeAction" class="typeAction">
+	<result></result>
+</action>
+</package>
+</struts>
